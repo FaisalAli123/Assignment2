@@ -1,11 +1,11 @@
 class GamesController < ApplicationController
+  before_action :find_game, only: [:show, :edit, :update, :destroy]
 
   def index
     @games = Game.all.order("created_at DESC")
   end
 
   def show
-    @game = Game.find(params[:id])
   end
 
   def new
