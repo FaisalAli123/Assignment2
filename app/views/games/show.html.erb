@@ -1,3 +1,6 @@
 <h2><%= @game.name %></h2>
 <h3><%= @game.developer %></h3>
 <p><%= @game.description %></p>
+
+<%= link_to "Edit", edit_game_path(@game) %>
+<%= link_to "Delete", game_path(@game), method: :delete, data: { confirm: "Are You Sure?"} %>
