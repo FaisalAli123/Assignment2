@@ -22,6 +22,20 @@ class GamesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @game.update(game_params)
+      redirect_to game_path(@game)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+  end
+
   private
 
     def game_params
