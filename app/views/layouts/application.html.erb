@@ -8,6 +8,25 @@
 </head>
 <body>
 
+  <nav class="navbar navbar-default">
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <%= link_to "Platinum Games", root_path, class: "navbar-brand" %>
+      </div>
+
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+        <% end %>
+      </ul>
+
+    </div>
+
+  </nav>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= yield %>
