@@ -1,6 +1,13 @@
 <h2 class="current-filter"><%= params[:filter] %></h2>
 
+<% if @games.count == 0 %>
 
-<% @games.each do |game| %>
-  <h2><%= link_to game.name, game_path(game) %></h2>
+  <h2>There Are No Games Currently In This Genre</h2>
+
+<% else%>
+
+  <% @games.each do |game| %>
+    <h2><%= link_to game.name, game_path(game) %></h2>
+  <% end %>
+  
 <% end %>

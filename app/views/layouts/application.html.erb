@@ -31,7 +31,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filter <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <% Filter.all.each do |filter| %>
-            <li>
+            <li class="<%= 'active' if params[:filter] == filter.name %>">
               <%= link_to filter.name, games_path(filter: filter.name), class: "link" %>
             </li>
             <% end %>
