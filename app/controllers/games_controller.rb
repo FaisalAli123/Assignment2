@@ -2,7 +2,12 @@ class GamesController < ApplicationController
   before_action :find_game, only: [:show, :edit, :update, :destroy]
 
   def index
-    @games = Game.all.order("created_at DESC")
+    if params[:filter].blank?
+      @games = Game.all.order("created_at DESC")
+    else
+      @filter_id = Filter.find_by(name: params[:filter]).id
+      @games = Game.where(:filter_id => @filter_id).order("created_at DESC")
+    end
   end
 
   def show
@@ -24,9 +29,11 @@ class GamesController < ApplicationController
   end
 
   def edit
+    @filters = Filter.all.map{ |c| [c.name, c.id] }
   end
 
   def update
+    @game.filter_id = params[:filter_id]
     if @game.update(game_params)
       redirect_to game_path(@game)
     else

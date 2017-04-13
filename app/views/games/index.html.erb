@@ -1,3 +1,6 @@
+<h2 class="current-filter"><%= params[:filter] %></h2>
+
+
 <% @games.each do |game| %>
   <h2><%= link_to game.name, game_path(game) %></h2>
 <% end %>
