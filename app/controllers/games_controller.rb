@@ -10,11 +10,12 @@ class GamesController < ApplicationController
 
   def new
     @game = current_user.games.build
+    @filters = Filter.all.map{ |c| [c.name, c.id] }
   end
 
   def create
     @game = current_user.games.build(game_params)
-
+    @game.filter_id = params[:filter_id]
     if @game.save
       redirect_to root_path
     else
@@ -41,7 +42,7 @@ class GamesController < ApplicationController
   private
 
     def game_params
-      params.require(:game).permit(:name, :description, :developer)
+      params.require(:game).permit(:name, :description, :developer, :filter_id)
     end
 
     def find_game

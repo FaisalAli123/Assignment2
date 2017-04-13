@@ -1,4 +1,5 @@
 <%= simple_form_for @game do |f| %>
+  <%= select_tag(:filter_id, options_for_select(@filters), :prompt => "Select A Genre") %>
   <%= f.input :name, label: "Game Name" %>
   <%= f.input :description %>
   <%= f.input :developer %>
