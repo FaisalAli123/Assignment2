@@ -2,6 +2,7 @@
 
 <%= simple_form_for @game, :html => { :multipart => true } do |f| %>
   <%= f.select :filter_id, @filters %>
+  <%= f.file_field :game_img %>
   <%= f.input :name, label: "Game Name" %>
   <%= f.input :description %>
   <%= f.input :developer %>

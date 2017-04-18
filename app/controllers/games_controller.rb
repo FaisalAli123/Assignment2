@@ -49,7 +49,7 @@ class GamesController < ApplicationController
   private
 
     def game_params
-      params.require(:game).permit(:name, :description, :developer, :filter_id)
+      params.require(:game).permit(:name, :description, :developer, :filter_id, :game_img)
     end
 
     def find_game

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170413150228) do
+ActiveRecord::Schema.define(version: 20170418121501) do
 
   create_table "filters", force: :cascade do |t|
     t.string   "name"
@@ -23,10 +23,14 @@ ActiveRecord::Schema.define(version: 20170413150228) do
     t.string   "name"
     t.text     "description"
     t.string   "developer"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.integer  "user_id"
     t.integer  "filter_id"
+    t.string   "game_img_file_name"
+    t.string   "game_img_content_type"
+    t.integer  "game_img_file_size"
+    t.datetime "game_img_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
