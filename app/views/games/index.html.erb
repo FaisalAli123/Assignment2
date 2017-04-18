@@ -7,7 +7,9 @@
 <% else%>
 
   <% @games.each do |game| %>
-    <h2><%= link_to game.name, game_path(game) %></h2>
+    <a href="/games/<%= game.id %>">
+      <%= image_tag game.game_img.url(:game_index) %>
+    </a>
   <% end %>
-  
+
 <% end %>
