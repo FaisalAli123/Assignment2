@@ -6,10 +6,16 @@
 
 <% else%>
 
-  <% @games.each do |game| %>
-    <a href="/games/<%= game.id %>">
-      <%= image_tag game.game_img.url(:game_index) %>
-    </a>
+
+
+    <% @games.each do |game| %>
+
+
+        <a href="/games/<%= game.id %>">
+          <%= image_tag game.game_img.url(:game_index) %>
+        </a>
+
+
   <% end %>
 
 <% end %>

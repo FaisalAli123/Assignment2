@@ -1,8 +1,23 @@
-<h2><%= @game.name %></h2>
-<h3><%= @game.developer %></h3>
-<h4>Genre: <%= @game.filter.name %></h4>
-<p><%= @game.description %></p>
+<div class="row">
+<div class="col-md-4">
+    <%= image_tag @game.game_img.url(:game_show) %>
+</div>
 
+<div class="col-md-8">
+  <h2><%= @game.name %></h2>
+  <h3><%= @game.developer %></h3>
+  <h4>Genre: <%= @game.filter.name %></h4>
+  <p><%= @game.description %></p>
+</div>
+</div>
+
+<div class="row">
+  
+  <div class="col-md-4">
+
+  </div>
+
+</div>
 <%= link_to "Back", root_path %>
 
 <% if user_signed_in? %>
