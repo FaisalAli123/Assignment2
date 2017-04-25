@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :find_game
+  before_action :find_review, only: [:edit, :update, :destroy]
   def new
     @review = Review.new
   end
@@ -16,6 +17,17 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @review.update(review_params)
+      redirect_to game_path(@game)
+    else
+      render 'edit'
+    end
+  end
+
   private
 
     def review_params
@@ -26,4 +38,7 @@ class ReviewsController < ApplicationController
       @game = Game.find(params[:game_id])
     end
 
+    def find_review
+      @review = Review.find(params[:id])
+    end
 end
