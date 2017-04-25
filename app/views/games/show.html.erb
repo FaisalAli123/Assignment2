@@ -12,8 +12,15 @@
 </div>
 
 <div class="row">
-  
+
   <div class="col-md-4">
+
+    <!-- Reviews -->
+    <%= render @game.reviews %>
+
+    <div>
+      <%= link_to "Add Review", new_game_review_path(@game) %>
+    </div>
 
   </div>
 
