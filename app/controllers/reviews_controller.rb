@@ -28,6 +28,11 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @review.destroy
+    redirect_to game_path(@game)
+  end
+
   private
 
     def review_params
