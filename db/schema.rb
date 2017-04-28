@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425092706) do
+ActiveRecord::Schema.define(version: 20170428114213) do
 
   create_table "filters", force: :cascade do |t|
     t.string   "name"
@@ -31,6 +31,12 @@ ActiveRecord::Schema.define(version: 20170425092706) do
     t.string   "game_img_content_type"
     t.integer  "game_img_file_size"
     t.datetime "game_img_updated_at"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|

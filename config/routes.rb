@@ -4,4 +4,6 @@ Rails.application.routes.draw do
     resources :reviews
   end
   root 'games#index'
+
+  resources :genres
 end
