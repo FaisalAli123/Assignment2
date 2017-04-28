@@ -1,5 +1,5 @@
 class FiltersController < ApplicationController
-
+before_action :authenticate_user!, only: [:new]
 def new
  @filter = current_user.filters.build
 end
