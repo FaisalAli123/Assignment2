@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   end
   root 'games#index'
 
-  resources :genres
+  resources :filters
 end
