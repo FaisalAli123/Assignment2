@@ -1,12 +1,12 @@
 class FiltersController < ApplicationController
 
 def new
- @filter = Filter.new
+ @filter = current_user.filters.build
 end
 
 def create
 
-@filter = Filter.new(filter_params)
+@filter = current_user.filters.build(filter_params)
 
 if @filter.save
   redirect_to games_path(@game)
