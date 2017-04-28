@@ -1,3 +1,5 @@
+<%= link_to "Back", root_path %>
+<br><br>
 <div class="row">
 <div class="col-md-4">
     <%= image_tag @game.game_img.url(:game_show) %>
@@ -6,16 +8,22 @@
 <div class="col-md-8">
   <h2><%= @game.name %></h2>
   <h3><%= @game.developer %></h3>
+  <h4>Average Rating</h4>
+  <div class="average-review-rating" data-score=<%= @average_review %>></div>
+  <span>According To <%= @game.reviews.count %> Reviews</span>
   <h4>Genre: <%= @game.filter.name %></h4>
   <p><%= @game.description %></p>
 </div>
 </div>
 
 <div class="row">
+  <hr>
 
-  <div class="col-md-4">
+
+  <div class="col-md-12">
 
     <!-- Reviews -->
+  <h2>Reviews</h2>
     <%= render @game.reviews %>
 
     <div>
@@ -25,7 +33,8 @@
   </div>
 
 </div>
-<%= link_to "Back", root_path %>
+<br>
+
 
 <% if user_signed_in? %>
 
@@ -45,5 +54,15 @@
       return $(this).attr('data-score');
     },
     path: '/assets'
+  });
+</script>
+
+<script>
+  $('.average-review-rating').raty({
+    readOnly: true,
+    path: '/assets/',
+    score: function() {
+      return $(this).attr('data-score')
+    }
   });
 </script>
