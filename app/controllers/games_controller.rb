@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   before_action :find_game, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
-
+  
   def index
     if params[:filter].blank?
       @games = Game.all.order("created_at DESC")
