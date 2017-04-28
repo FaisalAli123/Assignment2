@@ -1,5 +1,5 @@
 <h2 class="current-filter"><%= params[:filter] %></h2>
-
+<!-- If there is no games in specific genre a message will show -->
 <% if @games.count == 0 %>
 
   <h2>There Are No Games Currently In This Genre</h2>
@@ -7,8 +7,8 @@
 <% else%>
 
 
-
-    <% @games.each do |game| %>
+<!-- If there is games a game image will show in selected genre -->
+<% @games.each do |game| %>
 
 
         <a href="/games/<%= game.id %>">

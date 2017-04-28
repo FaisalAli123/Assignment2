@@ -1,14 +1,17 @@
+
 <%= link_to "Back", root_path %>
 <br><br>
 <div class="row">
 <div class="col-md-4">
+<!-- Display game image -->
     <%= image_tag @game.game_img.url(:game_show) %>
 </div>
-
+<!-- Display game information -->
 <div class="col-md-8">
   <h2><%= @game.name %></h2>
   <h3><%= @game.developer %></h3>
   <h4>Average Rating</h4>
+<!-- Display average rating based on number of ratings -->
   <div class="average-review-rating" data-score=<%= @average_review %>></div>
   <span>According To <%= @game.reviews.count %> Reviews</span>
   <h4>Genre: <%= @game.filter.name %></h4>
@@ -22,7 +25,7 @@
 
   <div class="col-md-12">
 
-    <!-- Reviews -->
+<!-- Display reviews -->
   <h2>Reviews</h2>
     <%= render @game.reviews %>
 
@@ -35,7 +38,7 @@
 </div>
 <br>
 
-
+<!-- if user is signed in they can edit and delte -->
 <% if user_signed_in? %>
 
   <% if @game.user_id == current_user.id %>
@@ -46,7 +49,7 @@
   <% end %>
 
 <% end %>
-
+<!-- JQuery for rating feature -->
 <script>
   $('.review-rating').raty({
     readOnly: true,

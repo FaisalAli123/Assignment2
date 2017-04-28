@@ -1,6 +1,7 @@
+<!-- Display review rating -->
 <div class="review-rating" data-score="<%= review.rating %>"></div>
 <p><%= review.comment %></p>
-
+<!-- If user is signed in they can edit and delete reviews -->
 <% if user_signed_in?%>
 
   <% if review.user_id == current_user.id %>

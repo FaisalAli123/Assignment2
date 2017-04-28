@@ -1,3 +1,4 @@
+<!-- Game Form -->
 <%= simple_form_for @game, :html => { :multipart => true } do |f| %>
   <%= select_tag(:filter_id, options_for_select(@filters), :prompt => "Select A Genre") %>
   <%= f.file_field :game_img %>

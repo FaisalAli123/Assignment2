@@ -1,5 +1,5 @@
 <h1>Edit Game</h1>
-
+<!-- Edit game form -->
 <%= simple_form_for @game, :html => { :multipart => true } do |f| %>
   <%= f.select :filter_id, @filters %>
   <%= f.file_field :game_img %>

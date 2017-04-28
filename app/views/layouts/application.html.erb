@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<!-- Navigation bar -->
   <nav class="navbar navbar-default">
 
     <div class="container">
@@ -24,7 +24,7 @@
           <li><%= link_to "Log In", new_user_session_path %></li>
         <% end %>
       </ul>
-
+<!-- Dropdown menu for genres -->
       <ul class="nav navbar-nav navbar-right">
 
         <li class="dropdown">
@@ -37,7 +37,7 @@
             <% end %>
           </ul>
         </li>
-
+<!-- Display only if user is signed in -->
         <% if user_signed_in?%>
           <li><%= link_to "Add Game", new_game_path %></li>
           <li><%= link_to "Add Genre", new_filter_path %></li>
@@ -53,6 +53,7 @@
   <p class="alert"><%= alert %></p>
 
 <div class="container">
+<!-- Get all content -->
   <%= yield %>
 </div>
 </body>
