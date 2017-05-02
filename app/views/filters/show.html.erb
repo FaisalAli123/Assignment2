@@ -1,0 +1,13 @@
+<h3><%= @filter.name %></h3>
+
+<!-- if user is signed in they can edit and delte -->
+<% if user_signed_in? %>
+
+  <% if @filter.user_id == current_user.id %>
+
+    <%= link_to "Edit", edit_filter_path(@filter) %>
+    <%= link_to "Delete", filter_path(@filter), method: :delete, data: { confirm: "Are You Sure?"} %>
+
+  <% end %>
+
+<% end %>
