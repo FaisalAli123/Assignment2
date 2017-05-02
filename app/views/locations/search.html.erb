@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_tag search_locations_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Near", :name => nil %>
+  </p>
+<% end %>
+
+<p>
+  <strong>Address:</strong>
+  <%= @location %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @longitude %>
+</p>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@latitude}%2C#{@longitude}" %>

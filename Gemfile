@@ -12,7 +12,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'simple_form', '~> 3.4'
 
 
-gem 'geocoder'
+gem 'geocoder', '~> 1.3', '>= 1.3.7'
 # Bootstrap Template
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 # Login, Logout, Register
