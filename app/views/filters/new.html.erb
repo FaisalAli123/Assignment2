@@ -1,6 +1,16 @@
 <h1>New Filter</h1>
 <!-- Form for genre -->
 <%= simple_form_for @filter do |f| %>
+<!-- validation for genres -->
+<% if @filter.errors.any? %>
+<ul>
+ <% @filter.errors.full_messages.each do |message| %>
+ <li>
+   <%= message %>
+  </li>
+<% end %>
+</ul>
+<% end %>
 <%= f.input :name, label: "Genre Name" %>
 <%= f.button :submit %>
 <% end %>
